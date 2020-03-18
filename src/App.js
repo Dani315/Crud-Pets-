@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Context from './store/index';
+import Inputs from './components/inputs';
+import Tabla from './components/tabla';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider>
+      <div className="container" style={{ marginTop: '3%' }}>
+        <div className="row">
+          <div className="col col-lg-4">
+            <Inputs />
+          </div>
+          <div className="col col-lg-8">
+            <Tabla />
+          </div>
+        </div>
+      </div>
+    </Context.Provider>
   );
 }
 
